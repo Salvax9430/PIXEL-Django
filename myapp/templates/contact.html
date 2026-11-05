@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact us</title>
-</head>
-<body>
-    <h1>Contact us</h1>
-    <p>Get in touch with us</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Contact MavunoLink{% endblock %}
+{% block content %}
+<main class="app-main contact-page">
+    <section class="page-title-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> We are listening</div><h1>Let's grow<br><em>together.</em></h1><p>Have a question about buying, selling or delivery? Our team is ready to help you take the next step.</p></div><div class="contact-card"><span class="info-symbol">✦</span><h2>Talk to a Mavuno guide</h2><p>Monday–Friday, 8:00–17:00 EAT</p><a class="text-link" href="mailto:hello@mavunolink.co.ke">hello@mavunolink.co.ke →</a></div></section>
+    <section class="contact-options"><a href="mailto:support@mavunolink.co.ke"><span>◎</span><strong>Customer support</strong><small>Help with orders and payments</small></a><a href="{% url 'drivers' %}"><span>⌁</span><strong>Delivery help</strong><small>Track a route or find a driver</small></a><a href="{% url 'join' %}"><span>♧</span><strong>Join the network</strong><small>Register as farmer, buyer or driver</small></a></section>
+</main>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Add produce | MavunoLink{% endblock %}
+{% block content %}
+<main class="auth-page"><section class="form-card"><div class="eyebrow"><span class="eyebrow-line"></span> Farmer workspace</div><h1>List your<br><em>produce.</em></h1><p>Enter real harvest information. It will appear in the live marketplace after you save.</p><form method="post">{% csrf_token %}{{ form.as_p }}<button class="button button-primary full-button" type="submit">Publish listing <span>↗</span></button></form></section></main>
+{% endblock %}

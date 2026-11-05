@@ -1,21 +1,10 @@
-{% extends "base.html" %} {% block title %}{{ page_title }} | MavunoLink{%
-endblock %} {% block content %}
+{% extends "base.html" %}
+{% block title %}{{ page_title }} | MavunoLink{% endblock %}
+{% block content %}
 <main class="app-main info-page">
   <div class="eyebrow"><span class="eyebrow-line"></span> MavunoLink</div>
   <h1>{{ page_title }}</h1>
   <p class="info-lead">{{ page_description }}</p>
-  <section class="info-card">
-    <span class="info-symbol">✦</span>
-    <h2>We are building this with you.</h2>
-    <p>
-      This page is ready for the next product integration. In the meantime, our
-      team can help you take the next step through the MavunoLink network.
-    </p>
-    <div class="info-actions">
-      <a class="button button-primary" href="{% url 'join' %}"
-        >Join the network <span>↗</span></a
-      ><a class="text-link" href="{% url 'my_contact' %}">Talk to our team →</a>
-    </div>
-  </section>
+  <section class="info-card"><span class="info-symbol">✦</span><h2>We are building this with you.</h2><p>This page is connected to the MavunoLink network. As the platform grows, this section will use your account and database records to provide a tailored experience.</p><div class="info-actions"><a class="button button-primary" href="{% url 'join' %}">Join the network <span>↗</span></a><a class="text-link" href="{% url 'my_contact' %}">Talk to our team →</a></div></section>
 </main>
 {% endblock %}

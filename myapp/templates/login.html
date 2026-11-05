@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Log in | MavunoLink{% endblock %}
+{% block content %}
+<main class="auth-page"><section class="auth-card"><div class="eyebrow"><span class="eyebrow-line"></span> Welcome back</div><h1>Log in to<br><em>your network.</em></h1><form method="post">{% csrf_token %}{{ form.as_p }}{% if form.errors %}<p class="form-error">Username or password is not correct.</p>{% endif %}<button class="button button-primary full-button" type="submit">Log in <span>→</span></button></form><p class="auth-switch">New here? <a href="{% url 'join' %}">Create your free profile</a></p></section></main>
+{% endblock %}

@@ -86,19 +86,19 @@
             <div class="product-grid">
                 <article class="product-card" data-category="vegetables">
                     <div class="product-photo photo-avocado"><span class="availability">Available now</span><button class="save-button" aria-label="Save avocado listing">♡</button></div>
-                    <div class="product-content"><div class="product-heading"><div><h3>Hass Avocados</h3><p class="location">◉ Murang'a, Kenya</p></div><div class="rating">★ 4.9</div></div><div class="product-meta"><span>From <strong>KSh 85</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'avocados' %}">View listing <span>→</span></a></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Live farmer listings</h3><p class="location">Browse current supply</p></div></div><div class="product-meta"><span><strong>{{ active_listings }}</strong> listings</span></div><a class="product-action" href="{% url 'marketplace' %}">View marketplace <span>→</span></a></div>
                 </article>
                 <article class="product-card" data-category="vegetables">
                     <div class="product-photo photo-tomato"><span class="availability">Available now</span><button class="save-button" aria-label="Save tomato listing">♡</button></div>
-                    <div class="product-content"><div class="product-heading"><div><h3>Ripe Tomatoes</h3><p class="location">◉ Kirinyaga, Kenya</p></div><div class="rating">★ 4.8</div></div><div class="product-meta"><span>From <strong>KSh 60</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'tomatoes' %}">View listing <span>→</span></a></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Real-time produce</h3><p class="location">Prices from farmers</p></div></div><div class="product-meta"><span>Database powered</span></div><a class="product-action" href="{% url 'marketplace' %}">Explore produce <span>→</span></a></div>
                 </article>
                 <article class="product-card" data-category="fruit">
                     <div class="product-photo photo-mango"><span class="availability">Harvesting soon</span><button class="save-button" aria-label="Save mango listing">♡</button></div>
-                    <div class="product-content"><div class="product-heading"><div><h3>Apple Mangoes</h3><p class="location">◉ Makueni, Kenya</p></div><div class="rating">★ 5.0</div></div><div class="product-meta"><span>From <strong>KSh 95</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'mangoes' %}">View listing <span>→</span></a></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Verified farmers</h3><p class="location">Direct-to-buyer supply</p></div></div><div class="product-meta"><span>Transparent pricing</span></div><a class="product-action" href="{% url 'join' %}">Join the network <span>→</span></a></div>
                 </article>
                 <article class="product-card" data-category="grains">
                     <div class="product-photo photo-maize"><span class="availability">Available now</span><button class="save-button" aria-label="Save maize listing">♡</button></div>
-                    <div class="product-content"><div class="product-heading"><div><h3>Dry White Maize</h3><p class="location">◉ Uasin Gishu, Kenya</p></div><div class="rating">★ 4.7</div></div><div class="product-meta"><span>From <strong>KSh 68</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'maize' %}">View listing <span>→</span></a></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Trusted logistics</h3><p class="location">Connect every order</p></div></div><div class="product-meta"><span>Choose your driver</span></div><a class="product-action" href="{% url 'drivers' %}">Find a driver <span>→</span></a></div>
                 </article>
             </div>
         </section>

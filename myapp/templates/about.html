@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-</head>
-<body>
-    <h1>About us</h1>
-    <p>welcome to our company</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Our story | MavunoLink{% endblock %}
+{% block content %}
+<main class="app-main info-page story-page">
+    <div class="eyebrow"><span class="eyebrow-line"></span> Our story</div>
+    <h1>Food connects<br><em>all of us.</em></h1>
+    <p class="info-lead">MavunoLink is a Kenya-first network making the path from farm to table more transparent, more human and more rewarding.</p>
+    <section class="story-grid">
+        <div class="story-card story-card-green"><span>12,500+</span><small>farmers ready to grow together</small></div>
+        <div class="story-card story-card-sand"><span>47</span><small>counties in our long-term vision</small></div>
+        <div class="story-copy"><h2>Built around the people who make food possible.</h2><p>We believe a farmer should know who buys their harvest, a buyer should know who grows it and a driver should be paid fairly for moving it.</p><a class="button button-primary" href="{% url 'join' %}">Join the network <span>↗</span></a></div>
+    </section>
+</main>
+{% endblock %}

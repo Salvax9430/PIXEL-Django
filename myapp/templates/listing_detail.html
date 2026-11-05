@@ -1,35 +1,5 @@
-{% extends "base.html" %} {% block title %}{{ product.0 }} | MavunoLink{%
-endblock %} {% block content %}
-<main class="app-main detail-page">
-  <a class="back-link" href="{% url 'marketplace' %}">← Back to marketplace</a>
-  <section class="detail-grid">
-    <div class="detail-photo photo-avocado"></div>
-    <div class="detail-copy">
-      <span class="availability">Available now</span>
-      <h1>{{ product.0 }}</h1>
-      <p class="detail-location">◉ {{ product.2 }}, Kenya • {{ product.1 }}</p>
-      <div class="detail-rating">★ 4.9 <span>86 verified reviews</span></div>
-      <p class="detail-description">
-        Carefully grown and graded produce, prepared for reliable delivery.
-        Every MavunoLink listing shows the source, price, minimum order and
-        trust history before you buy.
-      </p>
-      <div class="detail-price">
-        <strong>KSh {{ product.3 }}</strong><span>/ kg</span
-        ><small>Minimum order: {{ product.4 }}</small>
-      </div>
-      <div class="detail-actions">
-        <a class="button button-primary" href="{% url 'orders' %}"
-          >Start an order <span>↗</span></a
-        ><a class="button button-dark" href="{% url 'drivers' %}"
-          >Choose delivery <span>→</span></a
-        >
-      </div>
-      <div class="detail-trust">
-        <span>✓ Identity verified</span><span>◎ Escrow protected</span
-        ><span>⌁ Trackable delivery</span>
-      </div>
-    </div>
-  </section>
-</main>
+{% extends "base.html" %}
+{% block title %}{{ product.name }} | MavunoLink{% endblock %}
+{% block content %}
+<main class="app-main detail-page"><a class="back-link" href="{% url 'marketplace' %}">← Back to marketplace</a><section class="detail-grid"><div class="detail-photo photo-avocado" {% if product.image_url %}style="background-image:url('{{ product.image_url }}')"{% endif %}></div><div class="detail-copy"><span class="availability">{% if product.quantity_kg %}{{ product.quantity_kg }} kg available{% else %}Available{% endif %}</span><h1>{{ product.name }}</h1><p class="detail-location">◉ {{ product.county }}, Kenya • {{ product.farmer.user.get_full_name|default:product.farmer.user.username }}</p><div class="detail-rating">{% if product.average_rating %}★ {{ product.average_rating }}{% else %}New listing{% endif %} <span>{% if product.farmer.verified %}Verified farmer{% else %}Registered farmer{% endif %}</span></div><p class="detail-description">{{ product.description|default:"Direct-from-farm produce listed by a MavunoLink member." }}</p><div class="detail-price"><strong>KSh {{ product.price_per_kg }}</strong><span>/ kg</span><small>Minimum order: {{ product.minimum_order_kg }} kg</small></div>{% if user.is_authenticated %}<form method="post" action="{% url 'order_create' product.pk %}" class="order-form">{% csrf_token %}{{ order_form.as_p }}<button class="button button-primary" type="submit">Place order <span>↗</span></button></form>{% else %}<div class="detail-actions"><a class="button button-primary" href="{% url 'login' %}?next={{ request.path }}">Log in to order <span>↗</span></a><a class="button button-dark" href="{% url 'join' %}">Create account</a></div>{% endif %}<div class="detail-trust"><span>✓ Database-backed listing</span><span>◎ Secure order flow</span><span>⌁ Choose delivery</span></div></div></section></main>
 {% endblock %}
