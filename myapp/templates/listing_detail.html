@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}{{ product.0 }} | MavunoLink{%
+endblock %} {% block content %}
+<main class="app-main detail-page">
+  <a class="back-link" href="{% url 'marketplace' %}">← Back to marketplace</a>
+  <section class="detail-grid">
+    <div class="detail-photo photo-avocado"></div>
+    <div class="detail-copy">
+      <span class="availability">Available now</span>
+      <h1>{{ product.0 }}</h1>
+      <p class="detail-location">◉ {{ product.2 }}, Kenya • {{ product.1 }}</p>
+      <div class="detail-rating">★ 4.9 <span>86 verified reviews</span></div>
+      <p class="detail-description">
+        Carefully grown and graded produce, prepared for reliable delivery.
+        Every MavunoLink listing shows the source, price, minimum order and
+        trust history before you buy.
+      </p>
+      <div class="detail-price">
+        <strong>KSh {{ product.3 }}</strong><span>/ kg</span
+        ><small>Minimum order: {{ product.4 }}</small>
+      </div>
+      <div class="detail-actions">
+        <a class="button button-primary" href="{% url 'orders' %}"
+          >Start an order <span>↗</span></a
+        ><a class="button button-dark" href="{% url 'drivers' %}"
+          >Choose delivery <span>→</span></a
+        >
+      </div>
+      <div class="detail-trust">
+        <span>✓ Identity verified</span><span>◎ Escrow protected</span
+        ><span>⌁ Trackable delivery</span>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% block title %}My dashboard | MavunoLink{% endblock
+%} {% block content %}
+<main class="app-main dashboard-page">
+  <section class="dashboard-welcome">
+    <div>
+      <p class="muted">Tuesday, 4 June 2024 • Nyeri County</p>
+      <h1>Good morning, <em>Amina.</em></h1>
+      <p>Here is what is happening across your farm business today.</p>
+    </div>
+    <a class="button button-primary" href="{% url 'join' %}">+ Add a listing</a>
+  </section>
+  <div class="dashboard-grid">
+    <section class="dashboard-main">
+      <div class="metric-cards">
+        <div>
+          <span>Revenue this month</span><strong>KSh 248,600</strong
+          ><b>↗ 12.8%</b><small>vs. last month</small>
+        </div>
+        <div>
+          <span>Active orders</span><strong>18</strong><b>↗ 4.2%</b
+          ><small>3 need your attention</small>
+        </div>
+        <div>
+          <span>Trust score</span><strong>4.9 <i>★</i></strong
+          ><b class="neutral">Top 8%</b><small>86 verified reviews</small>
+        </div>
+      </div>
+      <div class="white-panel sales-panel">
+        <div class="panel-heading">
+          <div>
+            <span>Sales performance</span>
+            <h2>Revenue overview</h2>
+          </div>
+          <select>
+            <option>Last 30 days</option>
+            <option>Last 90 days</option>
+          </select>
+        </div>
+        <div class="big-chart">
+          <span>KSh 40k</span><span>KSh 30k</span><span>KSh 20k</span
+          ><span>KSh 10k</span><span>KSh 0</span>
+          <div class="chart-fill"></div>
+          <div class="chart-labels">
+            <b>1 May</b><b>8 May</b><b>15 May</b><b>22 May</b><b>30 May</b>
+          </div>
+        </div>
+      </div>
+      <div class="white-panel">
+        <div class="panel-heading">
+          <div>
+            <span>Recent activity</span>
+            <h2>Latest orders</h2>
+          </div>
+          <a href="{% url 'orders' %}" class="text-link">View all →</a>
+        </div>
+        <table class="data-table">
+          <tr>
+            <th>ORDER</th>
+            <th>BUYER</th>
+            <th>ITEM</th>
+            <th>VALUE</th>
+            <th>STATUS</th>
+          </tr>
+          <tr>
+            <td>#MV-1048</td>
+            <td>Karibu Kitchens</td>
+            <td>Avocados • 120 kg</td>
+            <td>KSh 10,200</td>
+            <td><span class="status status-green">In transit</span></td>
+          </tr>
+          <tr>
+            <td>#MV-1047</td>
+            <td>FreshCart Nairobi</td>
+            <td>Tomatoes • 80 kg</td>
+            <td>KSh 4,800</td>
+            <td><span class="status status-blue">Processing</span></td>
+          </tr>
+          <tr>
+            <td>#MV-1046</td>
+            <td>Wakulima Market</td>
+            <td>Potatoes • 200 kg</td>
+            <td>KSh 9,000</td>
+            <td><span class="status status-gray">Complete</span></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <aside class="dashboard-side">
+      <div class="side-card next-card">
+        <span class="side-kicker">NEXT ACTION</span>
+        <h3>Confirm your<br />tomorrow's harvest</h3>
+        <p>Buyers are looking for 300 kg of fresh avocados in Nairobi.</p>
+        <a href="{% url 'marketplace' %}">Update availability →</a>
+      </div>
+      <div class="white-panel small-panel">
+        <div class="panel-heading"><h2>Quick actions</h2></div>
+        <a class="quick-action" href="{% url 'join' %}"
+          >＋ List new produce <span>→</span></a
+        ><a class="quick-action" href="{% url 'drivers' %}"
+          >⌁ Find a driver <span>→</span></a
+        ><a class="quick-action" href="{% url 'orders' %}"
+          >◎ Request payment <span>→</span></a
+        ><a class="quick-action" href="{% url 'agronomy' %}"
+          >✦ Ask Mavuno AI <span>→</span></a
+        >
+      </div>
+    </aside>
+  </div>
+</main>
+{% endblock %}

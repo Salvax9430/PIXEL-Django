@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block title %}Join MavunoLink{% endblock %} {%
+block content %}
+<main class="join-page">
+  <section class="join-copy">
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span> Welcome to the network
+    </div>
+    <h1>Your work<br />deserves a <em>fairer</em><br />market.</h1>
+    <p>
+      Join 12,500+ people building a more transparent food economy in Kenya.
+    </p>
+    <div class="join-benefit">
+      ✓ No subscription fees <span>✓ Verified identity</span>
+      <span>✓ Secure payments</span>
+    </div>
+  </section>
+  <section class="join-form">
+    <div class="form-progress">
+      <span class="active">1</span><i></i><span>2</span><i></i><span>3</span>
+    </div>
+    <h2>What brings you to MavunoLink?</h2>
+    <p>Select all that apply. You can change this later.</p>
+    <label class="role-option"
+      ><input type="checkbox" /><span class="role-icon">♧</span
+      ><span
+        ><strong>I'm a farmer or producer</strong
+        ><small>Sell harvests directly to trusted buyers</small></span
+      ><b>›</b></label
+    ><label class="role-option"
+      ><input type="checkbox" /><span class="role-icon">◈</span
+      ><span
+        ><strong>I'm a buyer</strong
+        ><small>Source fresh produce at fair prices</small></span
+      ><b>›</b></label
+    ><label class="role-option"
+      ><input type="checkbox" /><span class="role-icon">⌁</span
+      ><span
+        ><strong>I'm a driver or logistics partner</strong
+        ><small>Move goods and earn on every route</small></span
+      ><b>›</b></label
+    ><a
+      class="button button-primary full-button join-next"
+      href="{% url 'dashboard' %}"
+      >Continue <span>→</span></a
+    ><small class="form-terms"
+      >By continuing, you agree to our <a href="{% url 'terms' %}">Terms</a> and
+      <a href="{% url 'privacy' %}">Privacy Policy</a>.</small
+    >
+  </section>
+</main>
+{% endblock %}

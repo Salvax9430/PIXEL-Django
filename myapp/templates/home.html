@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MavunoLink connects Kenyan farmers, buyers and trusted drivers directly.">
+    <title>MavunoLink | Kenya's farm-to-market network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body>
+    <div class="topbar">
+        <p><span class="pulse-dot"></span> Live network: 2,840 verified growers online</p>
+        <p class="topbar-right">Serving all 47 counties <span class="topbar-divider">|</span> <a href="{% url 'resources' %}">Swahili <span class="chevron">⌄</span></a></p>
+    </div>
+
+    <header class="site-header">
+        <a class="brand" href="{% url 'myhome' %}" aria-label="MavunoLink home">
+            <span class="brand-mark">✦</span>
+            <span>Mavuno<span>Link</span></span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="main-nav">
+            <a class="active" href="{% url 'marketplace' %}">Marketplace</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="{% url 'resources' %}">Knowledge hub</a>
+            <a href="{% url 'about' %}">Our story</a>
+        </nav>
+        <div class="header-actions">
+            <a class="icon-button" href="{% url 'orders' %}" aria-label="Notifications">♢<span class="notification-dot"></span></a>
+            <a class="login-link" href="{% url 'login' %}">Log in</a>
+            <a class="button button-dark button-small" href="{% url 'join' %}">Join the network <span>↗</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow"><span class="eyebrow-line"></span> Kenya's open agriculture network</div>
+                <h1>Good food.<br><em>Fairly traded.</em></h1>
+                <p class="hero-text">One trusted network connecting the people who grow, move and buy Kenya's food — without the middleman markup.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#market">Explore the market <span>↗</span></a>
+                    <a class="watch-link" href="#how-it-works"><span class="play-icon">▶</span> See how it works</a>
+                </div>
+                <div class="hero-proof">
+                    <div class="avatar-stack">
+                        <span class="avatar avatar-one">JM</span><span class="avatar avatar-two">AK</span><span class="avatar avatar-three">NO</span><span class="avatar avatar-four">+</span>
+                    </div>
+                    <p><strong>12,500+</strong> farmers are earning more<br>with MavunoLink</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <div class="image-label"><span class="live-badge">LIVE</span> Nyeri County</div>
+                    <div class="hero-quote">“From my farm<br>to your table.”</div>
+                </div>
+                <div class="floating-card harvest-card">
+                    <span class="card-icon green-icon">◒</span>
+                    <div><small>Today's harvest</small><strong>+18.4% <span>↑</span></strong></div>
+                    <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="floating-card route-card"><span class="route-icon">⌁</span><div><small>Next delivery</small><strong>Nyeri → Nairobi</strong></div><span class="route-time">2h 40m</span></div>
+            </div>
+        </section>
+
+        <section class="trust-strip">
+            <div><span class="trust-icon">♧</span><span><strong>Verified people</strong><small>Identity-checked network</small></span></div>
+            <div><span class="trust-icon">◈</span><span><strong>Fair prices</strong><small>Transparent from source</small></span></div>
+            <div><span class="trust-icon">⌁</span><span><strong>Reliable delivery</strong><small>Track every journey</small></span></div>
+            <div><span class="trust-icon">◎</span><span><strong>Secure payments</strong><small>Pay when it arrives</small></span></div>
+        </section>
+
+        <section class="market-section section-shell" id="market">
+            <div class="section-heading">
+                <div><div class="eyebrow"><span class="eyebrow-line"></span> The live market</div><h2>Buy direct.<br><span>Build trust.</span></h2></div>
+                <div class="section-heading-side"><p>Fresh produce, honest prices and real people. Discover what's moving near you today.</p><a class="text-link" href="{% url 'marketplace' %}">View all listings <span>↗</span></a></div>
+            </div>
+            <div class="market-toolbar">
+                <div class="filter-tabs"><button class="filter-tab active" data-filter="all">All produce</button><button class="filter-tab" data-filter="vegetables">Vegetables</button><button class="filter-tab" data-filter="fruit">Fruit</button><button class="filter-tab" data-filter="grains">Grains</button><button class="filter-tab" data-filter="dairy">Dairy</button></div>
+                <label class="search-box"><span>⌕</span><input type="search" placeholder="Search produce, county or farmer..."></label>
+            </div>
+            <div class="product-grid">
+                <article class="product-card" data-category="vegetables">
+                    <div class="product-photo photo-avocado"><span class="availability">Available now</span><button class="save-button" aria-label="Save avocado listing">♡</button></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Hass Avocados</h3><p class="location">◉ Murang'a, Kenya</p></div><div class="rating">★ 4.9</div></div><div class="product-meta"><span>From <strong>KSh 85</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'avocados' %}">View listing <span>→</span></a></div>
+                </article>
+                <article class="product-card" data-category="vegetables">
+                    <div class="product-photo photo-tomato"><span class="availability">Available now</span><button class="save-button" aria-label="Save tomato listing">♡</button></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Ripe Tomatoes</h3><p class="location">◉ Kirinyaga, Kenya</p></div><div class="rating">★ 4.8</div></div><div class="product-meta"><span>From <strong>KSh 60</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'tomatoes' %}">View listing <span>→</span></a></div>
+                </article>
+                <article class="product-card" data-category="fruit">
+                    <div class="product-photo photo-mango"><span class="availability">Harvesting soon</span><button class="save-button" aria-label="Save mango listing">♡</button></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Apple Mangoes</h3><p class="location">◉ Makueni, Kenya</p></div><div class="rating">★ 5.0</div></div><div class="product-meta"><span>From <strong>KSh 95</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'mangoes' %}">View listing <span>→</span></a></div>
+                </article>
+                <article class="product-card" data-category="grains">
+                    <div class="product-photo photo-maize"><span class="availability">Available now</span><button class="save-button" aria-label="Save maize listing">♡</button></div>
+                    <div class="product-content"><div class="product-heading"><div><h3>Dry White Maize</h3><p class="location">◉ Uasin Gishu, Kenya</p></div><div class="rating">★ 4.7</div></div><div class="product-meta"><span>From <strong>KSh 68</strong> <small>/ kg</small></span><span class="verified-label">✓ Verified farmer</span></div><a class="product-action" href="{% url 'listing_detail' 'maize' %}">View listing <span>→</span></a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="dashboard-section section-shell">
+            <div class="dashboard-intro"><div class="eyebrow"><span class="eyebrow-line"></span> Your command centre</div><h2>From harvest<br>to <span>home.</span></h2><p>Every order, every shilling, every journey — visible in one calm, powerful dashboard.</p><a class="button button-dark" href="{% url 'dashboard' %}">Open your dashboard <span>↗</span></a></div>
+            <div class="dashboard-card">
+                <div class="dashboard-top"><div><p class="dashboard-greeting">Good morning, Amina <span>✦</span></p><h3>Your market overview</h3></div><div class="dashboard-date">Last 30 days <span>⌄</span></div></div>
+                <div class="stat-row"><div class="stat"><span class="stat-label">Total sales</span><strong>KSh 248,600</strong><small class="positive">↗ 12.8% <i>vs last month</i></small></div><div class="stat"><span class="stat-label">Orders completed</span><strong>126</strong><small class="positive">↗ 8.4% <i>vs last month</i></small></div><div class="stat"><span class="stat-label">Trust score</span><strong>4.9 <span class="star">★</span></strong><small>Based on 86 reviews</small></div></div>
+                <div class="chart-area"><div class="chart-head"><span>Sales performance</span><div class="chart-legend"><i></i> This month <i class="legend-muted"></i> Last month</div></div><div class="chart"><div class="chart-y"><span>30k</span><span>20k</span><span>10k</span><span>0</span></div><div class="chart-lines"><div class="line line-one"></div><div class="line line-two"></div><div class="chart-x"><span>1 Jun</span><span>8 Jun</span><span>15 Jun</span><span>22 Jun</span><span>30 Jun</span></div></div></div></div>
+            </div>
+        </section>
+
+        <section class="logistics-section section-shell" id="services">
+            <div class="logistics-copy"><div class="eyebrow"><span class="eyebrow-line"></span> The MavunoLink fleet</div><h2>Good produce<br>needs a <span>good route.</span></h2><p>Our trusted driver network gets your goods where they need to go — fresh, tracked and on time.</p><a class="text-link" href="{% url 'drivers' %}">Find a driver <span>↗</span></a></div>
+            <div class="driver-card"><div class="driver-map"><span class="map-route"></span><span class="map-pin pin-start">●</span><span class="map-pin pin-end">●</span><div class="map-label start-label">NYERI</div><div class="map-label end-label">NAIROBI</div><div class="map-road road-one"></div><div class="map-road road-two"></div></div><div class="driver-info"><div class="driver-avatar">DK</div><div><h3>David Kamau <span class="verified-dot">✓</span></h3><p>4.9 ★ &nbsp; • &nbsp; 184 deliveries</p></div><span class="driver-status">Available</span></div><div class="driver-details"><span><small>Vehicle</small><strong>Refrigerated van</strong></span><span><small>Capacity</small><strong>1,200 kg</strong></span><span><small>ETA</small><strong>2h 40m</strong></span></div><a class="button button-primary full-button" href="{% url 'drivers' %}">Choose David <span>→</span></a></div>
+        </section>
+
+        <section class="services-section section-shell" id="how-it-works">
+            <div class="section-heading centered"><div><div class="eyebrow"><span class="eyebrow-line"></span> More than a marketplace</div><h2>Built for the whole<br><span>food ecosystem.</span></h2></div></div>
+            <div class="service-grid"><article class="service-card service-green"><span class="service-number">01</span><div class="service-symbol">◌</div><h3>Smart agronomy</h3><p>AI-powered crop insights, weather alerts and market timing to help you grow with confidence.</p><a href="{% url 'agronomy' %}">Meet your AI guide <span>↗</span></a></article><article class="service-card service-sand"><span class="service-number">02</span><div class="service-symbol">⌁</div><h3>Collective buying</h3><p>Pool orders with neighbours to access better seed, feed and equipment prices directly from suppliers.</p><a href="{% url 'collective_buying' %}">Explore group buying <span>↗</span></a></article><article class="service-card service-dark"><span class="service-number">03</span><div class="service-symbol">◈</div><h3>Secure finance</h3><p>Build your digital trust profile and unlock transparent credit from partners who understand your business.</p><a href="{% url 'finance' %}">View finance options <span>↗</span></a></article></div>
+        </section>
+
+        <section class="cta-section section-shell"><div class="cta-inner"><div><div class="eyebrow light-eyebrow"><span class="eyebrow-line"></span> This is your invitation</div><h2>The future of food<br>starts <em>here.</em></h2><p>Whether you grow it, move it or buy it — there is a place for you in this network.</p></div><div class="cta-actions"><a class="button button-primary" href="{% url 'join' %}">Create your free profile <span>↗</span></a><span>No subscription. No hidden fees.</span></div></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-top"><a class="brand brand-light" href="{% url 'myhome' %}"><span class="brand-mark">✦</span><span>Mavuno<span>Link</span></span></a><p>Connecting Kenya's food economy,<br>one fair deal at a time.</p><div class="footer-links"><a href="{% url 'marketplace' %}">Marketplace</a><a href="{% url 'dashboard' %}">For farmers</a><a href="{% url 'orders' %}">For buyers</a><a href="{% url 'drivers' %}">For drivers</a></div><div class="footer-links"><a href="{% url 'help' %}">Help centre</a><a href="{% url 'safety' %}">Safety & trust</a><a href="{% url 'my_contact' %}">Contact us</a><a href="{% url 'join' %}">Create profile ↗</a></div></div><div class="footer-bottom"><span>© 2024 MavunoLink Kenya</span><span>Made with purpose in Nairobi <span class="heart">♥</span></span><span><a href="{% url 'privacy' %}">Privacy</a> &nbsp; <a href="{% url 'terms' %}">Terms</a></span></div></footer>
+
+    <button class="chat-launcher" id="chatLauncher" aria-label="Open Mavuno AI assistant"><span>✦</span><b>Ask Mavuno AI</b><i>1</i></button>
+    <aside class="chat-panel" id="chatPanel" aria-label="Mavuno AI assistant">
+        <div class="chat-header"><div class="ai-avatar">✦</div><div><strong>Mavuno AI</strong><small><span class="pulse-dot"></span> Here to help</small></div><button id="closeChat" aria-label="Close chat">×</button></div>
+        <div class="chat-body"><div class="ai-message">Jambo! I'm your Mavuno guide. I can help you find fair prices, plan a delivery or understand today's market. What do you need?</div><div class="chat-suggestions"><button>Find avocados near me</button><button>What should I plant?</button><button>Get a delivery quote</button></div></div>
+        <form class="chat-input"><input placeholder="Ask anything..." aria-label="Ask Mavuno AI"><button aria-label="Send message">↑</button></form>
+    </aside>
+    <script src="{% static 'myapp/app.js' %}"></script>
+</body>
+</html>

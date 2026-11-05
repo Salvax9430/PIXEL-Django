@@ -1,0 +1,166 @@
+{% extends "base.html" %} {% block title %}Marketplace | MavunoLink{% endblock
+%} {% block content %}
+<main class="app-main">
+  <section class="page-hero">
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> Direct trade, real people
+      </div>
+      <h1>Everything fresh,<br /><em>in one market.</em></h1>
+      <p>
+        Compare verified produce from farmers across Kenya, see the true source
+        price and order delivery in a few taps.
+      </p>
+    </div>
+    <div class="market-summary">
+      <strong>8,426</strong><span>active listings today</span>
+      <div class="mini-progress"><i></i></div>
+      <small>+16% this week</small>
+    </div>
+  </section>
+  <section class="workspace-grid" id="listings">
+    <aside class="filter-panel">
+      <div class="panel-title">
+        <strong>Refine your search</strong
+        ><a href="{% url 'marketplace' %}">Clear all</a>
+      </div>
+      <label class="form-label"
+        >Search produce<input
+          class="field"
+          placeholder="e.g. potatoes, milk..." /></label
+      ><label class="form-label"
+        >County<select class="field">
+          <option>All counties</option>
+          <option>Kiambu</option>
+          <option>Nyeri</option>
+          <option>Nakuru</option>
+          <option>Makueni</option>
+          <option>Uasin Gishu</option>
+        </select></label
+      >
+      <div class="filter-block">
+        <span class="form-label">Categories</span
+        ><label
+          ><input type="checkbox" checked /> Vegetables
+          <small>1,204</small></label
+        ><label><input type="checkbox" /> Fruits <small>892</small></label
+        ><label><input type="checkbox" /> Grains <small>610</small></label
+        ><label
+          ><input type="checkbox" /> Dairy & eggs <small>344</small></label
+        >
+      </div>
+      <div class="filter-block">
+        <span class="form-label">Quality promise</span
+        ><label><input type="checkbox" /> Organic certified</label
+        ><label><input type="checkbox" /> Fair trade verified</label
+        ><label><input type="checkbox" /> Available this week</label>
+      </div>
+      <a class="button button-primary full-button" href="#listings"
+        >Apply filters <span>↗</span></a
+      >
+    </aside>
+    <div class="listing-area">
+      <div class="listing-toolbar">
+        <span><strong>1,204</strong> vegetable listings</span
+        ><select class="sort-select">
+          <option>Recommended</option>
+          <option>Price: low to high</option>
+          <option>Newest first</option>
+        </select>
+      </div>
+      <div class="listing-grid">
+        <article class="listing-card">
+          <div class="listing-photo photo-avocado">
+            <span>Available now</span>
+          </div>
+          <div class="listing-body">
+            <div class="listing-title">
+              <div>
+                <h3>Hass Avocados</h3>
+                <p>Murang'a • Green Hills Farm</p>
+              </div>
+              <b>★ 4.9</b>
+            </div>
+            <div class="listing-price">
+              <strong>KSh 85 <small>/ kg</small></strong
+              ><span>Min. order: 20 kg</span>
+            </div>
+            <div class="listing-footer">
+              <span>✓ Identity verified</span
+              ><a href="{% url 'listing_detail' 'avocados' %}"
+                >View details →</a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="listing-card">
+          <div class="listing-photo photo-tomato">
+            <span>Available now</span>
+          </div>
+          <div class="listing-body">
+            <div class="listing-title">
+              <div>
+                <h3>Grade 1 Tomatoes</h3>
+                <p>Kirinyaga • Wambui Growers</p>
+              </div>
+              <b>★ 4.8</b>
+            </div>
+            <div class="listing-price">
+              <strong>KSh 60 <small>/ kg</small></strong
+              ><span>Min. order: 10 kg</span>
+            </div>
+            <div class="listing-footer">
+              <span>✓ Identity verified</span
+              ><a href="{% url 'listing_detail' 'tomatoes' %}"
+                >View details →</a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="listing-card">
+          <div class="listing-photo photo-maize"><span>Bulk ready</span></div>
+          <div class="listing-body">
+            <div class="listing-title">
+              <div>
+                <h3>Dry White Maize</h3>
+                <p>Uasin Gishu • Eldoret Co-op</p>
+              </div>
+              <b>★ 4.7</b>
+            </div>
+            <div class="listing-price">
+              <strong>KSh 68 <small>/ kg</small></strong
+              ><span>Min. order: 100 kg</span>
+            </div>
+            <div class="listing-footer">
+              <span>✓ Co-op verified</span
+              ><a href="{% url 'listing_detail' 'maize' %}">View details →</a>
+            </div>
+          </div>
+        </article>
+        <article class="listing-card">
+          <div class="listing-photo photo-mango">
+            <span>Harvesting soon</span>
+          </div>
+          <div class="listing-body">
+            <div class="listing-title">
+              <div>
+                <h3>Apple Mangoes</h3>
+                <p>Makueni • Kilili Orchards</p>
+              </div>
+              <b>★ 5.0</b>
+            </div>
+            <div class="listing-price">
+              <strong>KSh 95 <small>/ kg</small></strong
+              ><span>Min. order: 30 kg</span>
+            </div>
+            <div class="listing-footer">
+              <span>✓ Farmer verified</span
+              ><a href="{% url 'listing_detail' 'mangoes' %}">View details →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

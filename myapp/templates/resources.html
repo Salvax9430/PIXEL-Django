@@ -1,0 +1,93 @@
+{% extends "base.html" %} {% block title %}Knowledge hub | MavunoLink{% endblock
+%} {% block content %}
+<main class="app-main">
+  <section class="page-title-row knowledge-head">
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> Learn. Grow. Prosper.
+      </div>
+      <h1>The knowledge<br /><em>hub.</em></h1>
+      <p>
+        Practical guidance from agronomists, farmers and food business builders
+        across Kenya.
+      </p>
+    </div>
+    <div class="resource-search">
+      <span>⌕</span
+      ><input placeholder="Search guides, prices, crops..." /><button>
+        Search
+      </button>
+    </div>
+  </section>
+  <div class="resource-layout">
+    <section>
+      <div class="resource-feature">
+        <div class="resource-feature-image"></div>
+        <div class="resource-feature-copy">
+          <span class="resource-tag">Featured guide • 8 min read</span>
+          <h2>How to get the best price for your harvest</h2>
+          <p>
+            Five simple ways to prepare, price and present your produce so
+            buyers see its true value.
+          </p>
+          <a class="text-link" href="{% url 'marketplace' %}"
+            >Read the guide →</a
+          >
+        </div>
+      </div>
+      <div class="resource-heading">
+        <h2>Explore by topic</h2>
+        <a class="text-link" href="{% url 'resources' %}"
+          >View all resources →</a
+        >
+      </div>
+      <div class="topic-grid">
+        <a href="{% url 'agronomy' %}"
+          ><span>◒</span><strong>Growing better</strong
+          ><small>Crop care & agronomy</small></a
+        ><a href="{% url 'finance' %}"
+          ><span>◈</span><strong>Better business</strong
+          ><small>Pricing & finance</small></a
+        ><a href="{% url 'drivers' %}"
+          ><span>⌁</span><strong>Moving produce</strong
+          ><small>Storage & logistics</small></a
+        ><a href="{% url 'marketplace' %}"
+          ><span>◎</span><strong>Market pulse</strong
+          ><small>Prices & demand</small></a
+        >
+      </div>
+    </section>
+    <aside class="resource-side">
+      <div class="price-widget">
+        <div class="panel-heading">
+          <div>
+            <span>Market pulse</span>
+            <h2>Today's prices</h2>
+          </div>
+          <span class="live-badge">LIVE</span>
+        </div>
+        <p>Average buyer price per kg</p>
+        <div class="price-line">
+          <b>Avocados</b><strong>KSh 85</strong
+          ><span class="positive">↗ 6.2%</span>
+        </div>
+        <div class="price-line">
+          <b>Tomatoes</b><strong>KSh 60</strong
+          ><span class="positive">↗ 3.8%</span>
+        </div>
+        <div class="price-line">
+          <b>Maize</b><strong>KSh 68</strong
+          ><span class="negative">↘ 1.4%</span>
+        </div>
+        <a href="{% url 'marketplace' %}">See all market prices →</a>
+      </div>
+      <div class="ai-promo">
+        <span>✦</span>
+        <h3>Ask Mavuno AI</h3>
+        <p>“What crop should I plant in Nyeri this season?”</p>
+        <a href="{% url 'agronomy' %}">Start a conversation →</a>
+      </div>
+    </aside>
+  </div>
+</main>
+{% endblock %}

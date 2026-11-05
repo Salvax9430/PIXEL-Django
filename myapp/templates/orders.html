@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block title %}Orders & payments | MavunoLink{%
+endblock %} {% block content %}
+<main class="app-main">
+  <section class="page-title-row">
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> Transparent trade
+      </div>
+      <h1>Orders & <em>payments.</em></h1>
+      <p>
+        Every transaction, delivery and shilling is visible from farm to table.
+      </p>
+    </div>
+    <a class="button button-dark" href="{% url 'marketplace' %}"
+      >Shop the market <span>↗</span></a
+    >
+  </section>
+  <div class="order-summary">
+    <div>
+      <span>Awaiting payment</span><strong>KSh 18,450</strong
+      ><small>2 invoices</small>
+    </div>
+    <div>
+      <span>In transit</span><strong>5 orders</strong
+      ><small>Expected this week</small>
+    </div>
+    <div>
+      <span>Completed this month</span><strong>KSh 86,200</strong
+      ><small class="positive">↗ 18% vs May</small>
+    </div>
+    <div>
+      <span>Escrow protected</span><strong>100%</strong
+      ><small>Safe until delivery</small>
+    </div>
+  </div>
+  <section class="white-panel orders-panel">
+    <div class="panel-heading">
+      <div>
+        <span>All activity</span>
+        <h2>Your orders</h2>
+      </div>
+      <div class="order-tabs">
+        <button class="active">All <b>12</b></button
+        ><button>In transit <b>5</b></button><button>Complete <b>7</b></button>
+      </div>
+    </div>
+    <div class="order-list">
+      <div class="order-row">
+        <div class="order-icon order-green">◉</div>
+        <div>
+          <strong>#MV-1048 • Hass Avocados</strong>
+          <p>120 kg from Green Hills Farm • Driver: David Kamau</p>
+        </div>
+        <span>KSh 10,200</span
+        ><span class="status status-green">In transit</span
+        ><a href="{% url 'drivers' %}">Track →</a>
+      </div>
+      <div class="order-row">
+        <div class="order-icon order-yellow">◈</div>
+        <div>
+          <strong>#MV-1047 • Grade 1 Tomatoes</strong>
+          <p>80 kg from Wambui Growers • Payment secured</p>
+        </div>
+        <span>KSh 4,800</span><span class="status status-blue">Processing</span
+        ><a href="{% url 'listing_detail' 'tomatoes' %}">Details →</a>
+      </div>
+      <div class="order-row">
+        <div class="order-icon order-gray">✓</div>
+        <div>
+          <strong>#MV-1046 • Irish Potatoes</strong>
+          <p>200 kg from Kieni Farmers Co-op • Delivered 28 May</p>
+        </div>
+        <span>KSh 9,000</span><span class="status status-gray">Complete</span
+        ><a href="{% url 'safety' %}">Review →</a>
+      </div>
+    </div>
+  </section>
+  <div class="payment-note">
+    <span>◎</span>
+    <div>
+      <strong>How MavunoLink payments work</strong>
+      <p>
+        Your money is held securely until your order arrives. If something is
+        wrong, our resolution team helps both sides find a fair outcome.
+      </p>
+    </div>
+    <a href="{% url 'safety' %}">Learn about protection →</a>
+  </div>
+</main>
+{% endblock %}

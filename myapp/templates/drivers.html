@@ -1,0 +1,84 @@
+{% extends "base.html" %} {% block title %}MavunoLink Fleet | Drivers{% endblock
+%} {% block content %}
+<main class="app-main">
+  <section class="page-hero driver-hero">
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> MavunoLink fleet
+      </div>
+      <h1>Move food.<br /><em>Move Kenya.</em></h1>
+      <p>
+        Reliable, fairly paid transport for every farm, collection point and
+        buyer. Choose a trusted driver or join the fleet.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#drivers"
+          >Find a driver <span>↗</span></a
+        ><a class="text-link" href="{% url 'join' %}">Become a driver →</a>
+      </div>
+    </div>
+    <div class="fleet-stat">
+      <strong>1,284</strong><span>verified drivers</span>
+      <div class="fleet-stat-row"><b>98.6%</b> on-time deliveries</div>
+      <div class="fleet-stat-row"><b>47</b> counties covered</div>
+    </div>
+  </section>
+  <section id="drivers" class="driver-directory">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span> Available near you
+        </div>
+        <h2>Choose with <span>confidence.</span></h2>
+      </div>
+      <label class="search-box"
+        >⌕ <input placeholder="Pickup county or destination"
+      /></label>
+    </div>
+    <div class="driver-directory-grid">
+      <article class="directory-card">
+        <div class="driver-map mini-map"></div>
+        <div class="directory-body">
+          <div class="driver-profile">
+            <div class="driver-avatar">DK</div>
+            <div>
+              <h3>David Kamau <span class="verified-dot">✓</span></h3>
+              <p>Nyeri → Nairobi</p>
+            </div>
+            <b class="available">Available</b>
+          </div>
+          <div class="driver-stats">
+            <span>★ 4.9 <small>184 trips</small></span
+            ><span>Refrigerated van <small>1,200 kg</small></span
+            ><span>KSh 8,500 <small>estimated</small></span>
+          </div>
+          <a class="button button-primary full-button" href="{% url 'join' %}"
+            >Request David <span>→</span></a
+          >
+        </div>
+      </article>
+      <article class="directory-card">
+        <div class="driver-map mini-map map-two"></div>
+        <div class="directory-body">
+          <div class="driver-profile">
+            <div class="driver-avatar driver-blue">LW</div>
+            <div>
+              <h3>Lucy Wanjiku <span class="verified-dot">✓</span></h3>
+              <p>Kiambu → Nairobi</p>
+            </div>
+            <b class="available">Available</b>
+          </div>
+          <div class="driver-stats">
+            <span>★ 4.8 <small>96 trips</small></span
+            ><span>Pickup truck <small>800 kg</small></span
+            ><span>KSh 5,200 <small>estimated</small></span>
+          </div>
+          <a class="button button-primary full-button" href="{% url 'join' %}"
+            >Request Lucy <span>→</span></a
+          >
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}

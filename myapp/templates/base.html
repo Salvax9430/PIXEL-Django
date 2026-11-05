@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MavunoLink{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+</head>
+<body class="app-page">
+    <div class="topbar"><p><span class="pulse-dot"></span> Live network: 2,840 verified growers online</p><p class="topbar-right">Serving all 47 counties <span class="topbar-divider">|</span> <a href="{% url 'resources' %}">Swahili ⌄</a></p></div>
+    <header class="site-header">
+        <a class="brand" href="{% url 'myhome' %}"><span class="brand-mark">✦</span><span>Mavuno<span>Link</span></span></a>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="main-nav">
+            <a href="{% url 'marketplace' %}">Marketplace</a><a href="{% url 'dashboard' %}">Dashboard</a><a href="{% url 'orders' %}">Orders</a><a href="{% url 'drivers' %}">Drivers</a><a href="{% url 'resources' %}">Knowledge hub</a>
+        </nav>
+        <div class="header-actions"><a class="icon-button" href="{% url 'orders' %}" aria-label="Notifications">♢<span class="notification-dot"></span></a><a class="login-link" href="{% url 'login' %}">Log in</a><a class="button button-dark button-small" href="{% url 'join' %}">Join the network <span>↗</span></a></div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="site-footer"><div class="footer-top"><a class="brand brand-light" href="{% url 'myhome' %}"><span class="brand-mark">✦</span><span>Mavuno<span>Link</span></span></a><p>Connecting Kenya's food economy,<br>one fair deal at a time.</p><div class="footer-links"><a href="{% url 'marketplace' %}">Marketplace</a><a href="{% url 'dashboard' %}">For farmers</a><a href="{% url 'orders' %}">For buyers</a><a href="{% url 'drivers' %}">For drivers</a></div><div class="footer-links"><a href="{% url 'resources' %}">Knowledge hub</a><a href="{% url 'safety' %}">Safety & trust</a><a href="{% url 'my_contact' %}">Contact us</a><a href="{% url 'join' %}">Create profile ↗</a></div></div><div class="footer-bottom"><span>© 2024 MavunoLink Kenya</span><span>Made with purpose in Nairobi ♥</span><span><a href="{% url 'privacy' %}">Privacy</a> &nbsp; <a href="{% url 'terms' %}">Terms</a></span></div></footer>
+</body>
+</html>
